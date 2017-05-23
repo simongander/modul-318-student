@@ -50,28 +50,35 @@ using System.Windows.Forms;
         // Sucht die Verbindungen zwischen den in den Comboboxen angegebenen Stationen
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            byte isArrivalTime = 1;
-
-            if (radioButtonArrivalTime.Checked == true)
+            try
             {
-                isArrivalTime = 1;
+                byte isArrivalTime = 1;
+
+                if (radioButtonArrivalTime.Checked == true)
+                {
+                    isArrivalTime = 1;
+                }
+                else if (radioButtonDepartureTime.Checked == true)
+                {
+                    isArrivalTime = 0;
+                }
+
+                listViewConnections.Items.Clear();
+
+                SwissTransport.Connections resultConnections = null;
+                resultConnections = transport.GetConnections(comboBoxDepartureLocation.Text, comboBoxArrivalLocation.Text, dateTimePickerSearchDate.Value.ToShortDateString(), dateTimePickerSearchTime.Text, isArrivalTime);
+                foreach (SwissTransport.Connection connection in resultConnections.ConnectionList)
+                {
+                    ListViewItem lvi = new ListViewItem(GetFormattedTimeString(connection.From.Departure));
+                    lvi.SubItems.Add(GetFormattedTimeString(connection.To.Arrival));
+                    lvi.SubItems.Add(GetFormattedDurationString(connection.Duration));
+
+                    listViewConnections.Items.Add(lvi);
+                }
             }
-            else if (radioButtonDepartureTime.Checked == true)
+            catch
             {
-                isArrivalTime = 0;
-            }
-
-            listViewConnections.Items.Clear();
-
-            SwissTransport.Connections resultConnections = null;
-            resultConnections = transport.GetConnections(comboBoxDepartureLocation.Text, comboBoxArrivalLocation.Text, dateTimePickerSearchDate.Value.ToShortDateString(), dateTimePickerSearchTime.Text, isArrivalTime );
-            foreach (SwissTransport.Connection connection in resultConnections.ConnectionList)
-            {
-                ListViewItem lvi = new ListViewItem(GetFormattedTimeString(connection.From.Departure));
-                lvi.SubItems.Add(GetFormattedTimeString(connection.To.Arrival));
-                lvi.SubItems.Add(GetFormattedDurationString(connection.Duration));
-
-                listViewConnections.Items.Add(lvi);
+                MessageBox.Show("Sie haben zu viele Anfragen an den Server gesendet");
             }
         }
 

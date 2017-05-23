@@ -309,6 +309,7 @@ namespace SwissTransportUI
             this.columnHeaderVehicle});
             this.listViewDepartureTable.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listViewDepartureTable.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.listViewDepartureTable.FullRowSelect = true;
             this.listViewDepartureTable.Location = new System.Drawing.Point(3, 103);
             this.listViewDepartureTable.Name = "listViewDepartureTable";
             this.listViewDepartureTable.Size = new System.Drawing.Size(686, 512);
@@ -389,6 +390,7 @@ namespace SwissTransportUI
             this.columnHeaderName,
             this.columnHeaderXCoordinate,
             this.columnHeaderYCoordinate});
+            this.listViewStations.FullRowSelect = true;
             this.listViewStations.Location = new System.Drawing.Point(0, 53);
             this.listViewStations.Name = "listViewStations";
             this.listViewStations.Size = new System.Drawing.Size(692, 243);
