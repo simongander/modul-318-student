@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // Allgemeine Informationen über eine Assembly werden über die folgenden
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
-[assembly: AssemblyTitle("SwissTransportUI")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("SwissTransport")]
+[assembly: AssemblyDescription("Fahrpläne für den Schweizer ÖV")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SwissTransportUI")]
+[assembly: AssemblyProduct("SwissTransport")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
