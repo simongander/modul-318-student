@@ -126,17 +126,17 @@ namespace SwissTransportUI
             // columnHeaderDeparture
             // 
             this.columnHeaderDeparture.Text = "Abfahrt";
-            this.columnHeaderDeparture.Width = 129;
+            this.columnHeaderDeparture.Width = 135;
             // 
             // columnHeaderArrival
             // 
             this.columnHeaderArrival.Text = "Ankunft";
-            this.columnHeaderArrival.Width = 136;
+            this.columnHeaderArrival.Width = 135;
             // 
             // columnHeaderTravelTime
             // 
             this.columnHeaderTravelTime.Text = "Reisedauer";
-            this.columnHeaderTravelTime.Width = 447;
+            this.columnHeaderTravelTime.Width = 400;
             // 
             // groupBoxSearch
             // 
@@ -411,7 +411,7 @@ namespace SwissTransportUI
             // columnHeaderYCoordinate
             // 
             this.columnHeaderYCoordinate.Text = "Y Koordinate";
-            this.columnHeaderYCoordinate.Width = 215;
+            this.columnHeaderYCoordinate.Width = 200;
             // 
             // MainFrm
             // 
