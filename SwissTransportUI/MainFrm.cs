@@ -82,14 +82,14 @@ using System.Windows.Forms;
             }
         }
 
-        //Aktiviert den Suchbutton wenn beide Comboboxen valid sind
-        private void comboBoxDepartureLocation_TextChanged(object sender, EventArgs e)
+        // Aktiviert den Suchbutton wenn beide Comboboxen valid sind
+        private void ComboBoxDepartureLocation_TextChanged(object sender, EventArgs e)
         {
             btnSearch.Enabled = IsComboBoxValid();
         }
 
-        //Aktiviert den Suchbutton wenn beide Comboboxen valid sind
-        private void comboBoxArrivalLocation_TextChanged(object sender, EventArgs e)
+        // Aktiviert den Suchbutton wenn beide Comboboxen valid sind
+        private void ComboBoxArrivalLocation_TextChanged(object sender, EventArgs e)
         {
             btnSearch.Enabled = IsComboBoxValid();
         }
@@ -108,6 +108,7 @@ using System.Windows.Forms;
             string[] splittedStringInfos = new string[2];
 
             splittedStringInfos = comboBoxDepartureTable.Text.Split(';');
+
             // String Trimmen um den Leerschlag vor der ID zu entfernen
             CreateDepartureTable(splittedStringInfos[0], splittedStringInfos[1].Trim(' '));
         }
@@ -130,7 +131,7 @@ using System.Windows.Forms;
             }
         }
 
-        //Aktiviert den Suchbutton wenn die Textbox valid ist
+        // Aktiviert den Suchbutton wenn die Textbox valid ist
         private void TxtSearchInput_TextChanged(object sender, EventArgs e)
         {
             if (txtSearchInput.Text != string.Empty)
@@ -146,14 +147,14 @@ using System.Windows.Forms;
         // Funktionen
 
         // Funktion um die Stationen in eine Combobox zu laden
-        private void SearchStationFromComboBox(ComboBox ComboBox)
+        private void SearchStationFromComboBox(ComboBox comboBox)
         {
-            ComboBox.Items.Clear();
+            comboBox.Items.Clear();
             SwissTransport.Stations resultStations = null;
-            resultStations = transport.GetStations("*" + ComboBox.Text + "*");
+            resultStations = transport.GetStations("*" + comboBox.Text + "*");
             foreach (SwissTransport.Station station in resultStations.StationList)
             {
-                ComboBox.Items.Add(station);
+                comboBox.Items.Add(station);
             }
         }
 
@@ -201,16 +202,15 @@ using System.Windows.Forms;
                 MessageBox.Show("Es wurden keine Ergebnisse gefunden");
             }
         }
-        //Überprüft ob eine Eingabe in die Comboboxen gemacht wurde
+        // Überprüft ob eine Eingabe in die Comboboxen gemacht wurde
         private bool IsComboBoxValid()
         {
             if (comboBoxArrivalLocation.Text != string.Empty && comboBoxDepartureLocation.Text != string.Empty)
             {
                 return true;
             }
+
             return false;
         }
-
-
     }
 }

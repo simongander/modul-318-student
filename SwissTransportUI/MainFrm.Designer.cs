@@ -256,7 +256,7 @@ namespace SwissTransportUI
             this.comboBoxArrivalLocation.Size = new System.Drawing.Size(490, 21);
             this.comboBoxArrivalLocation.TabIndex = 1;
             this.comboBoxArrivalLocation.DropDown += new System.EventHandler(this.ComboBoxArrivalLocation_DropDown);
-            this.comboBoxArrivalLocation.TextChanged += new System.EventHandler(this.comboBoxArrivalLocation_TextChanged);
+            this.comboBoxArrivalLocation.TextChanged += new System.EventHandler(this.ComboBoxArrivalLocation_TextChanged);
             // 
             // comboBoxDepartureLocation
             // 
@@ -266,7 +266,7 @@ namespace SwissTransportUI
             this.comboBoxDepartureLocation.Size = new System.Drawing.Size(490, 21);
             this.comboBoxDepartureLocation.TabIndex = 0;
             this.comboBoxDepartureLocation.DropDown += new System.EventHandler(this.ComboBoxDepartureLocation_DropDown);
-            this.comboBoxDepartureLocation.TextChanged += new System.EventHandler(this.comboBoxDepartureLocation_TextChanged);
+            this.comboBoxDepartureLocation.TextChanged += new System.EventHandler(this.ComboBoxDepartureLocation_TextChanged);
             // 
             // tabPageDepartureTable
             // 
